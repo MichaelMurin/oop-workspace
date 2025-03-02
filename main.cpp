@@ -8,10 +8,10 @@ int main() {
     int array1[5] = {4,5,6,7,8};
     std::cout << "The number is: " << count(array1, 5) << std::endl;
 
-    int array2[6] = {2,10,5,3,1,6};
-    std::cout << "The number is: " << count(array2, 6) << std::endl;
+    //int array2[6] = {2,10,5,3,1,6};
+    //std::cout << "The number is: " << count(array2, 6) << std::endl;
 
-    int array3[2] = {20,5};
-    std::cout << "The number is: " << count(array3, 2) << std::endl;
+    //int array3[2] = {20,5};
+    //std::cout << "The number is: " << count(array3, 2) << std::endl;
     return 0;
 }

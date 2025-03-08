@@ -4,6 +4,6 @@
 extern bool is_fanarray(int[], int);
 
 int main() {
-    int array[4] = {2,3,3,2};
-    std::cout << is_fanarray(array, 4) << std::endl;
+    int array[5] = {1,2,3,2,1};
+    std::cout << is_fanarray(array, 5) << std::endl;
 }

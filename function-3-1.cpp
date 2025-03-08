@@ -7,7 +7,8 @@ bool is_fanarray(int array[], int n) {
     if (n < 1) {
         return false;
     }
-    int mid = std::ceil(n/2);
+    double length = n;
+    int mid = ceil(length/2);
     for (int i = 1; i < mid; i++) {
         if (array[i] <= array[i-1]) {
             return false;

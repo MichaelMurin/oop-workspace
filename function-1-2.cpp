@@ -1,16 +1,24 @@
 #include <iostream>
 
-//function that returns the average of all elements in an integer array
+//function that, given a matrix of integers with 10 rows and 10 columns, see if array is an identity array
 
-double array_mean(int array[], int n) {
-    if (n < 1) {
-        return 0.0;
+int is_identity(int array[10][10]) {
+    for (int i = 0; i < 10; i++) {
+        if (array[i][i] != 1) {
+            return 0;
+        }
+        for (int j = i + 1; j < 10; j++) {
+            if (array[i][j] != 0) {
+                return 0;
+            }
+        }
+        if (i > 0) {
+            for (int j = i - 1; j >= 0; j--) {
+                if (array[i][j] != 0) {
+                return 0;
+                }
+            }
+        }
     }
-    double sum = 0;
-    double mean = 0;
-    for (int i = 0; i < n; i++) {
-        sum = sum + array[i];
-    }
-    mean = sum / n;
-    return mean;
+    return 1;
 }

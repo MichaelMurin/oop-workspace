@@ -1,14 +1,11 @@
 #include <iostream>
 
-//function to return the sum of all elements in an array
+//function to return the sum of all elements in the diagonal of an array
 
-int array_sum(int array[], int n) {
-    if (n < 1) {
-        return 0;
-    }
+int sum_diagonal(int array[4][4]) {
     int sum = 0;
-    for (int i = 0; i < n; i++) {
-        sum = sum + array[i];
+    for (int i = 0; i < 4; i++) {
+        sum = sum + array[i][i];
     }
     return sum;
 }

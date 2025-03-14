@@ -1,9 +1,9 @@
 #include <iostream>
 
-extern int num_count(int[], int, int); //linking function to main
+extern void count_digits(int[4][4]); //linking function to main
 
 int main() {
-    int array[6] = {2, 3, 1, 4, 1, 4};
-    std::cout << "The number of times 1 appears is: " << num_count(array, 6, 1) << std::endl;
+    int array[4][4] = {2, 3, 1, 4, 1, 4, 0, 9, 3, 4, 2, 1, 9, 8, 7, 0};
+    count_digits(array);
     return 0;
 }

@@ -1,24 +1,47 @@
 #include <iostream>
+#include <cmath>
 
-//function that given an array of integers and the length of the array,
-//will count the amount of times the numbers 2, 5 and 9 appear using a switch statement.
+//a number of functions that calculate the sum of the
+//elements in the case of it being a palindrome array
 
-void two_five_nine(int array[], int n) {
-    int num_twos = 0;
-    int num_fives = 0;
-    int num_nines = 0;
-    for (int i = 0; i < n; i++) {
-        switch (array[i]) {
-            case 2:
-             num_twos++;
-             break;
-            case 5:
-             num_fives++;
-             break;
-            case 9:
-             num_nines++;
-             break;
-        }
+
+bool is_palindrome(int integers[], int length) { //function to check whether the array is a palindrome
+    if (length < 1) {
+        return false;
     }
-    std::cout << "2:" << num_twos << ";5:" << num_fives << ";9:" << num_nines << ";" << std::endl;
+    if (length % 2 != 0) {
+        for (int i = 0; i < ceil(length/2); i++) {
+            if (integers[i] != integers[length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    } else {
+        for (int i = 0; i < length/2; i++) {
+            if (integers[i] != integers[length - 1 - i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+int sum_array_elements(int integers[], int length) { //function to sum elements of the array
+    if (length < 1) {
+        return -1;
+    }
+    int sum = 0;
+    for (int i = 0; i < length; i++) {
+        sum = sum + integers[i];
+    }
+    return sum;
+}
+int sum_if_palindrome(int integers[], int length) {
+    if (length < 1) {
+        return -1;
+    }
+    if (is_palindrome(integers, length) == false) {
+        return -2;
+    } else {
+        return sum_array_elements(integers, length);
+    }
 }

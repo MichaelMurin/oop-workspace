@@ -1,9 +1,9 @@
 #include <iostream>
 
-extern int min_element(int[], int);
+extern void print_binary_str(std::string);
 
 int main() {
-    int array[5] = {2, 5, 0, 4, 3};
-    std::cout << "The smallest number is: " << min_element(array, 5) << std::endl;
+    std::string number = "2579";
+    print_binary_str(number);
     return 0;
 }

@@ -1,14 +1,16 @@
 #include <iostream>
+using namespace std;
 
-//function that returns the sum of two arrays as an integer (of equal size)
+//function that, given a matrix, prints out the scaled version of the matrix,
+//where you multiply every element in the matrix by the same numeric value.
 
-int sum_two_arrays(int array[], int secondarray[], int n) {
-    if (n < 1) {
-        return 0;
+void print_scaled(int array[3][3],int scale) {
+    int resultArray[3][3];
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            resultArray[i][j] = array[i][j] * scale;
+            cout << resultArray[i][j] << " ";
+        }
+        cout << endl;
     }
-    int sum = 0;
-    for (int i = 0; i < n; i++) {
-        sum = sum + array[i] + secondarray[i];
-    }
-    return sum;
 }

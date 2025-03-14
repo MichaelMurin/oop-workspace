@@ -1,10 +1,10 @@
 #include <iostream>
 
-extern int sum_two_arrays(int[], int[], int); //external function calling
+extern void print_scaled(int[3][3],int); //external function calling
 
 int main() {
-    int array1[5] = {2, 2, 4, 1, 0};
-    int array2[5] = {3, 1, 5, 7, 1};
-    std::cout << "The sum of the two arrays is: " << sum_two_arrays(array1, array2, 5) << std::endl;
+    int array[3][3] = {{2, 2, 4},{1, 0, 3},{4, 1, 0}};
+    int scale = 4;
+    print_scaled(array,scale);
     return 0;
 }

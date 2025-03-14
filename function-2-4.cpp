@@ -1,17 +1,35 @@
 #include <iostream>
 
-//function that given an array of integers and its length, will determine if the elements are in ascending order or not
-
-bool is_ascending(int array[], int n) {
-    if (n < 1) {
-        return false;
+//function that given an array of integers determines the
+//maximum and minimum elements and returns their sum
+int array_min(int integers[], int length) {
+    if (length < 1) {
+        return -1;
     }
-    int previous = array[0];
-    for (int i = 1; i < n; i++) {
-        if (array[i] < previous) {
-            return false;
+    int min = integers[0];
+    for (int i = 1; i < length; i++) {
+        if (min > integers[i]) {
+            min = integers[i];
         }
-        previous = array[i];
     }
-    return true;
+    return min;
+}
+int array_max(int integers[], int length) {
+    if (length < 1) {
+        return -1;
+    }
+    int max = integers[0];
+    for (int i = 1; i < length; i++) {
+        if (max < integers[i]) {
+            max = integers[i];
+        }
+    }
+    return max;
+}
+int sum_min_max(int integers[], int length) {
+    if (length < 1) {
+        return -1;
+    }
+    int sum = array_max(integers,length) + array_min(integers,length);
+    return sum;
 }

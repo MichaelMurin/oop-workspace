@@ -1,16 +1,13 @@
 #include <iostream>
+#include <cmath>
 
-//function that returns the maximum element in an integer array
+//function that, given a binary number represented as an array,
+//takes the array and its size as a parameter, and returns the integer value
 
-int max_element(int array[], int n) {
-    if (n < 1) {
-        return 0;
+int binary_to_int(int binary_digits[], int number_of_digits) {
+    int sum = 0;
+    for (int i = 0; i < number_of_digits; i++) {
+        sum = sum + binary_digits[i] * pow(2,number_of_digits - 1 - i);
     }
-    int max = 0;
-    for (int i = 0; i < n; i++) {
-        if (max < array[i]) {
-            max = array[i];
-        }
-    }
-    return max;
+    return sum;
 }

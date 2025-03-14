@@ -1,9 +1,10 @@
 #include <iostream>
+#include <cmath>
 
-extern int max_element(int[], int);
+extern int binary_to_int(int[], int);
 
 int main() {
-    int array[6] = {0, 6, 1, 3, 4, 9};
-    std::cout << "The biggest number is: " << max_element(array, 6) << std::endl;
+    int binary[6] = {1, 1, 0, 0, 1, 0};
+    std::cout << "The integer value of the binary array is " << binary_to_int(binary, 6) << std::endl;
     return 0;
 }

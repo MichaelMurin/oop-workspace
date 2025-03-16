@@ -9,8 +9,9 @@ void changeValue(double* ptr) {
 //Part 3: function that prints an array by its address
 void printArray(double* arrayPtr, int size) {
     for (int i = 0; i < size; i++) {
-        cout << "Element " << i << ": " << arrayPtr[i] << endl;
+        cout << arrayPtr[i] << " ";
     }
+    cout << endl;
 }
 
 //Part 4: function that accepts a pointer to a double array and its size and prints its maximum value

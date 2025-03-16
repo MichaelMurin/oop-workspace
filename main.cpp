@@ -11,7 +11,7 @@ int main() {
     cout << "New number: " << number << endl;
     //Part 3
     double array3[5] = {3,0,4,1,2};
-    printArray(array3, 5);
+    //printArray(array3, 5);
     //Part 4
     cout << "The maximum value of the array is: " << arrayMax(array3, 5) << endl;
     //Part 5, 6, 7, 8

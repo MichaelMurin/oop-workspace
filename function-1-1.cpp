@@ -1,11 +1,19 @@
 #include <iostream>
+using namespace std;
 
-//function to return the sum of all elements in the diagonal of an array
+//functions to read up to 10 numbers from input and then print them
 
-int sum_diagonal(int array[4][4]) {
-    int sum = 0;
-    for (int i = 0; i < 4; i++) {
-        sum = sum + array[i][i];
+int *readNumbers(){
+    int *array;
+    array = new int[10];
+    for (int i = 0; i < 10; i++) {
+        cin >> array[i];
     }
-    return sum;
+    return array;
+}
+
+void printNumbers(int *numbers,int length) {
+    for (int i = 0; i < length; i++) {
+        cout << i << " " << numbers[i] << endl;
+    }
 }

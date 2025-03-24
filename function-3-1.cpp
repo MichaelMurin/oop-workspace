@@ -1,21 +1,25 @@
 #include <iostream>
-#include <cmath>
+using namespace std;
 
-//function that given an array of integers, and its length, determine if the array is a 'fan' array
+//functions to read up to 10 numbers from input and then print them
 
-bool is_fanarray(int array[], int n) {
-    if (n < 1) {
+int *readNumbers(){
+    int *array;
+    array = new int[10];
+    for (int i = 0; i < 10; i++) {
+        cin >> array[i];
+    }
+    return array;
+}
+
+//function that given two arrays of the same length that is greater than 0 with all elements equivalent will be true
+
+bool equalsArray(int *numbers1,int *numbers2,int length) {
+    if (length < 1) {
         return false;
     }
-    double length = n;
-    int mid = ceil(length/2);
-    for (int i = 1; i < mid; i++) {
-        if (array[i] <= array[i-1]) {
-            return false;
-        }
-    }
-    for (int i = mid; i < n; i++) {
-        if (array[i] != array[n-1-i]) {
+    for (int i = 0; i < length; i++) {
+        if (numbers1[i] != numbers2[i]) {
             return false;
         }
     }

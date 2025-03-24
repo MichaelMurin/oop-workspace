@@ -1,9 +1,9 @@
 #include <iostream>
 
-extern void print_binary_str(std::string);
+extern void hexDigits(int *,int);
 
 int main() {
-    std::string number = "2579";
-    print_binary_str(number);
+    int array[6] = {0,5,11,9,15,10};
+    hexDigits(array,6);
     return 0;
 }

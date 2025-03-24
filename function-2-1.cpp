@@ -1,16 +1,35 @@
 #include <iostream>
+using namespace std;
 
-//function that given a positive integer decimal number (i.e. base-10) transforms it into binary (base-2) and prints out the result
-void print_binary_str(std::string decimal_numbers) {
-    int number = stoi(decimal_numbers);
-    std::string binary;
-    while (number != 0) {    
-        if (number % 2 == 0) {
-            binary = "0" + binary;
-        } else {
-            binary = "1" + binary;
+//function that given an array with integers between 0-15, prints their hexadecimal digit
+void hexDigits(int *numbers,int length) {
+    char hex;
+    for (int i = 0; i < length; i++) {
+        cout << i << " " << numbers[i] << " ";
+        switch (numbers[i]) {
+            case 10:
+                hex = 'A';
+                break;
+            case 11:
+                hex = 'B';
+                break;
+            case 12:
+                hex = 'C';
+                break;
+            case 13:
+                hex = 'D';
+                break;
+            case 14:
+                hex = 'E';
+                break;
+            case 15:
+                hex = 'F';
+                break;
+            default:
+                char value[1 + sizeof(char)];
+                sprintf(value,"%d",numbers[i]);
+                hex = value[0];
         }
-        number /= 2;
+        cout << hex << endl;
     }
-    std::cout << binary << std::endl;
 }

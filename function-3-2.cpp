@@ -1,22 +1,37 @@
 #include <iostream>
-#include <cmath>
+using namespace std;
 
-//Function that, given an array of integers and its length, returns the median of the array
+//functions to read up to 10 numbers from input and then print them
 
-int median_array(int array[], int n) {
-    if (n < 1 || n % 2 == 0) {
-        return 0;
+int *readNumbers(){
+    int *array;
+    array = new int[10];
+    for (int i = 0; i < 10; i++) {
+        cin >> array[i];
     }
-    int temp = 0;
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n - i; j++) {
-            if (array[j] > array[j + 1]) {
-                temp = array[j];
-                array[j] = array[j+1];
-                array[j+1] = temp;
-            }
+    return array;
+}
+
+//function that given two arrays of the same length that is greater than 0 with all elements equivalent will be true
+
+bool equalsArray(int *numbers1,int *numbers2,int length) {
+    if (length < 1) {
+        return false;
+    }
+    for (int i = 0; i < length; i++) {
+        if (numbers1[i] != numbers2[i]) {
+            return false;
         }
     }
-    int median = std::ceil(n/2);
-    return array[median];
+    return true;
+}
+
+//function that makes a new array that is the reverse of another
+
+int *reverseArray(int *numbers1,int length) {
+    int *array = new int[length];
+    for (int i = 0; i < length; i++) {
+        array[i] = numbers1[length - 1 - i];
+    }
+    return array;
 }

@@ -1,9 +1,13 @@
 #include <iostream>
-#include <cmath>
+using namespace std;
 
-extern bool is_fanarray(int[], int);
+extern int *readNumbers();
+extern bool equalsArray(int *,int *,int);
 
 int main() {
-    int array[5] = {1,2,3,2,1};
-    std::cout << is_fanarray(array, 5) << std::endl;
+    int *array1 = readNumbers();
+    int *array2 = readNumbers();
+    std::cout << equalsArray(array1, array2, 10) << std::endl;
+    delete[] array1;
+    delete[] array2;
 }

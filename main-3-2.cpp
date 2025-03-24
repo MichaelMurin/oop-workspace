@@ -1,10 +1,14 @@
 #include <iostream>
-#include <cmath>
 
-extern int median_array(int[], int);
+extern int *readNumbers();
+extern bool equalsArray(int *,int *,int);
+extern int *reverseArray(int *,int);
 
 int main() {
-    int array[5] = {2,5,1,2,4};
-    std::cout << "The median of the array is: " << median_array(array,5) << std::endl;
+    int *array = readNumbers();
+    int *reverse = reverseArray(array, 10);
+    std::cout << equalsArray(array, reverse, 10) << std::endl;
+    delete[] array;
+    delete[] reverse;
     return 0;
 }

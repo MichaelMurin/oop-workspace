@@ -1,15 +1,23 @@
 #include <iostream>
+#include "Unit.h"
+#include "ApartmentBuilding.h"
+
 using namespace std;
 
-extern void modifyArray(double*, int, double);
-
 int main() {
-    double array[6] = {3.2, 4.1, 2.0, 1.7, 6.3, 0.9};
-    modifyArray(array,6,1.1);
-    cout << "Product Array: ";
-    for (int i = 0; i < 6; i++) {
-        cout << array[i] << " ";
+    ApartmentBuilding newBuilding = ApartmentBuilding(4);
+    cout << "The new building allows for " << newBuilding.get_Capacity() << " units." << endl;
+    newBuilding.add_Unit(Unit(500,2,30)); 
+    newBuilding.add_Unit(Unit());
+    newBuilding.add_Unit(Unit(700,2,50));
+    cout << "There are currently " << newBuilding.get_Current_Number_of_Units() << " units in the building." << endl;
+    Unit *array = newBuilding.get_Contents();
+    for (int i = 0; i < newBuilding.get_Current_Number_of_Units(); i++) {
+        cout << "Unit " << i+1 << ":" << endl
+        << "Value: $" << array[i].get_Value() << endl
+        << "Number of Bedrooms: " << array[i].get_Num_Bedrooms() << endl
+        << "Unit Size: " << array[i].get_Area() << " m^2" << endl;
     }
-    cout << endl;
+    newBuilding.~ApartmentBuilding();
     return 0;
 }

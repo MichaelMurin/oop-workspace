@@ -6,9 +6,9 @@
 class ApartmentBuilding {
     public:
         int capacity;
-        int num_units = 0;
-        Unit *units;
-        ApartmentBuilding();              // default constructor allocates capacity for 10 units
+        int num_units;
+        Unit * units;
+        ApartmentBuilding(); // default constructor allocates capacity for 10 units
         ApartmentBuilding(int capacity);  // constructor for ApartmentBuilding with given capacity
         int get_Capacity();  // returns the maximum number of units allowed
     

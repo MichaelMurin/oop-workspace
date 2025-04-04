@@ -6,12 +6,22 @@
 ApartmentBuilding::ApartmentBuilding() {
     capacity = 10;
     units = new Unit[10];
+    num_units = 0;
 }
 
 // constructor for ApartmentBuilding with given capacity
 ApartmentBuilding::ApartmentBuilding(int capacity) {
-    this->capacity = capacity;
-    units = new Unit[capacity];
+    if (capacity < 0) {
+        this->capacity = 10;
+        units = new Unit[10];
+        num_units = 0;
+    }
+    else {
+        this->capacity = capacity;
+        this->units = new Unit[capacity];
+        this->num_units = 0;
+    }
+    
 } 
 
 // returns the maximum number of units allowed
@@ -25,7 +35,7 @@ int ApartmentBuilding::get_Current_Number_of_Units() {
 }
 
 // returns a dynamic array of the units in the apartment building
-Unit* ApartmentBuilding::get_Contents() {
+Unit * ApartmentBuilding::get_Contents() {
     return units;
 }
 
@@ -44,5 +54,5 @@ bool ApartmentBuilding::add_Unit(Unit unit) {
 
 // destructor
 ApartmentBuilding::~ApartmentBuilding() {
-    delete[] units;
+    delete[] this->units;
 }

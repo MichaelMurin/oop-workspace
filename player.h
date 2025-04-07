@@ -3,18 +3,18 @@
 
 #include <string>
 
-class player {
+class Player {
     private:
         std::string name;
         int health;
         int damage;
 
     public:
-        player(); //default constructor
+        Player(); //default constructor
 
-        player(std::string name, int health, int damage); //constructor that sets data members to given values
+        Player(std::string name, int health, int damage); //constructor that sets data members to given values
 
-        void attack(player* opponent, int damage); //deals damage to opponent based on player's damage points
+        void attack(Player* opponent, int damage); //deals damage to opponent based on player's damage points
 
         void takeDamage(int damage); //reduces the player's health by a given amount
 

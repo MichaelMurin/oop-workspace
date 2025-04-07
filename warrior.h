@@ -4,15 +4,15 @@
 #include <string>
 #include "player.h"
 
-class warrior:public player {
+class Warrior:public Player {
     private:
         std::string weapon;
     public:
-        warrior(); //default constructor
+        Warrior(); //default constructor
 
-        warrior(std::string name, int health, int damage, std::string weapon); //constructor
+        Warrior(std::string name, int health, int damage, std::string weapon); //constructor
 
-        void swingWeapon(player* opponent); //deals damage to opponent based on player's weapon's damage points
+        void swingWeapon(Player* opponent); //deals damage to opponent based on player's weapon's damage points
 
         void setWeapon(std::string weapon); //sets weapon
 

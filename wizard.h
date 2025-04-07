@@ -4,15 +4,15 @@
 #include "player.h"
 #include <string>
 
-class wizard:public player {
+class Wizard:public Player {
     private:
         int mana;
     public:
-        wizard(); //default constructor
+        Wizard(); //default constructor
 
-        wizard(std::string name, int health, int damage, int mana); //constructor
+        Wizard(std::string name, int health, int damage, int mana); //constructor
 
-        void castSpell(player* opponent); //deals damage to opponent based on player's mana points
+        void castSpell(Player* opponent); //deals damage to opponent based on player's mana points
 
         int getMana(); //get mana value
 

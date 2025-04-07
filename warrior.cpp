@@ -5,22 +5,22 @@
 using namespace std;
 
 //constructor
-warrior::warrior(string name, int health, int damage, string weapon):player(name, health, damage) {
+Warrior::Warrior(string name, int health, int damage, string weapon):Player(name, health, damage) {
     this->weapon = weapon;
 }
 
 //deals damage to opponent based on player's weapon's damage points
-void warrior::swingWeapon(player* opponent) {
+void Warrior::swingWeapon(Player* opponent) {
     cout << getName() << " swings their " << weapon << " at " << opponent->getName() << "!\n";
     attack(opponent, getDamage());
 } 
 
 //sets weapon
-void warrior::setWeapon(string weapon) {
+void Warrior::setWeapon(string weapon) {
     this->weapon = weapon;
 }
 
 //gets weapon
-string warrior::getWeapon() {
+string Warrior::getWeapon() {
     return weapon;
 }

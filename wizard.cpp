@@ -5,7 +5,7 @@
 using namespace std;
 
 //default constructor
-wizard::wizard():player() {
+Wizard::Wizard():Player() {
     setName("Wizard");
     setHealth(10);
     setDamage(2);
@@ -13,22 +13,22 @@ wizard::wizard():player() {
 }
 
 //constructor
-wizard::wizard(string name, int health, int damage, int mana):player(name, health, mana) {
+Wizard::Wizard(string name, int health, int damage, int mana):Player(name, health, mana) {
     this->mana = mana;
 }
 
 //deals damage to opponent based on player's mana points
-void wizard::castSpell(player* opponent) {
+void Wizard::castSpell(Player* opponent) {
     cout << getName() << " casts a spell on " << opponent->getName() << ".\n";
     opponent->takeDamage(mana);
 }
 
 //get mana value
-int wizard::getMana() {
+int Wizard::getMana() {
     return mana;
 }
 
 //set mana value
-void wizard::setMana(int mana) {
+void Wizard::setMana(int mana) {
     this->mana = mana;
 } 

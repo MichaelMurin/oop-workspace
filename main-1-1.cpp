@@ -1,30 +1,41 @@
 #include <iostream>
-#include "player.h"
-#include "wizard.h"
-#include "warrior.h"
+#include "Vehicle.h"
+#include "Car.h"
+#include "Motorbike.h"
+#include "Bus.h"
 
 using namespace std;
 
 int main() {
-    //Wizard(name, health, damage, mana)
-    Wizard wizard("Gandalf", 100, 20, 50);
-    //Warrior(name, health, damage, weapon)
-    Warrior warrior("Aragorn", 120, 25, "Sword");
-    
-    cout << "Let the battle begin!" << endl;
-    
-    while (wizard.getHealth() > 0 && warrior.getHealth() > 0) {
-        wizard.castSpell(&warrior);
-        if (warrior.getHealth() > 0) {
-            warrior.swingWeapon(&wizard);
+    int num = 0;
+    cout << "How many vehicles?: ";
+    cin >> num;
+    Vehicle *list = new Vehicle[num];
+    for (int i = 0; i < num; i++) {
+        int type = 0;
+        int ID = 0;
+        cout << "What kind of vehicle?:\n1 = Car\n2 = Bus\n3 = Motorbike\n";
+        cin >> type;
+        while (type != 1 && type != 2 && type != 3) {
+            cout << "Please input a valid number: ";
+            cin >> type;
+        }
+        cout << "What is the ID?: ";
+        cin >> ID;
+        switch(type) {
+            case 1:
+                list[i] = Car(ID);
+                break;
+            case 2:
+                list[i] = Bus(ID);
+                break;
+            case 3:
+                list[i] = Motorbike(ID);
+                break;
         }
     }
-    
-    if (wizard.getHealth() > 0) {
-        cout << wizard.getName() << " wins!" << endl;
-    } else {
-        cout << warrior.getName() << " wins!" << endl;
+
+    for (int i = 0; i < num; i++) {
+        cout << "Vehicle " << i << ": " << list[i].getParkingDuration() << endl;
     }
-    
-    return 0;
 }

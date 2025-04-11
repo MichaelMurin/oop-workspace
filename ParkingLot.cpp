@@ -14,13 +14,13 @@ int ParkingLot::getCount() {
 } 
 
 //parks a vehicle using its pointer
-void ParkingLot::parkVehicle(Vehicle *vehicle) {
-    if (amount != max) {
-        vehicles[amount] = *vehicle;
+void ParkingLot::parkVehicle(Vehicle vehicle) {
+    if (amount < max) {
+        vehicles[amount] = vehicle;
         amount++;
     }
     else {
-        std::cout << "The lot is full." << std::endl;
+        std::cout << "The lot is full" << std::endl;
     }
 }
 
@@ -32,7 +32,7 @@ void ParkingLot::unparkVehicle(int ID) {
             return;
         }
     }
-    std::cout << "Vehicle not found in the lot." << std::endl;
+    std::cout << "Vehicle not in the lot\n" << std::endl;
 }
 
 //counts number of vehicles that have stayed for too long

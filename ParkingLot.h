@@ -12,7 +12,7 @@ class ParkingLot {
 
         int getCount(); //return amount of parked vehicles
 
-        void parkVehicle(Vehicle *vehicle); //parks a vehicle using its pointer
+        void parkVehicle(Vehicle vehicle); //parks a vehicle using its pointer
 
         void unparkVehicle(int ID); //unparks a vehicle using its ID
 

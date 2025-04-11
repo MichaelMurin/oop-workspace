@@ -8,6 +8,8 @@
 using namespace std;
 
 int main() {
+    Vehicle vehicle;
+    Vehicle *ptr;
     ParkingLot theLot(10);
     while (theLot.getCount() != 10) {
         int type = 0;
@@ -22,15 +24,17 @@ int main() {
         cin >> ID;
         switch(type) {
             case 1:
-                theLot.parkVehicle(Car(ID));
+                vehicle = Car(ID);
                 break;
             case 2:
-                theLot.parkVehicle(Bus(ID));
+                vehicle = Bus(ID);
                 break;
             case 3:
-                theLot.parkVehicle(Motorbike(ID));
+                vehicle = Motorbike(ID);
                 break;
         }
+        ptr = &vehicle;
+        theLot.parkVehicle(ptr);
     }
     cout << "The number of overstaying vehicles are: " << theLot.countOverstayingVehicles(15) << endl;
 }

@@ -14,9 +14,9 @@ int ParkingLot::getCount() {
 } 
 
 //parks a vehicle using its pointer
-void ParkingLot::parkVehicle(Vehicle vehicle) {
+void ParkingLot::parkVehicle(Vehicle *vehicle) {
     if (amount < max) {
-        vehicles[amount] = vehicle;
+        vehicles[amount] = *vehicle;
         amount++;
     }
     else {

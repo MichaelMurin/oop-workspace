@@ -22,13 +22,13 @@ int main() {
         cin >> ID;
         switch(type) {
             case 1:
-                theLot.parkVehicle(Car(ID));
+                theLot.parkVehicle(&Car(ID));
                 break;
             case 2:
-                theLot.parkVehicle(Bus(ID));
+                theLot.parkVehicle(&Bus(ID));
                 break;
             case 3:
-                theLot.parkVehicle(Motorbike(ID));
+                theLot.parkVehicle(&Motorbike(ID));
                 break;
         }
     }

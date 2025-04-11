@@ -16,7 +16,7 @@ class Vehicle {
 
         int getID(); //Return function for ID
 
-        int getParkingDuration(); //return time vehicle has been in parking
+        virtual int getParkingDuration(); //return time vehicle has been in parking
 };
 
 #endif

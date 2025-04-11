@@ -34,3 +34,14 @@ void ParkingLot::unparkVehicle(int ID) {
     }
     std::cout << "Vehicle not found in the lot." << std::endl;
 }
+
+//counts number of vehicles that have stayed for too long
+int ParkingLot::countOverstayingVehicles(int maxParkingDuration) {
+    int overstayed = 0;
+    for (int i = 0; i < amount; i++) {
+        if (vehicles[i].getParkingDuration() > 15) {
+            overstayed++;
+        }
+    }
+    return overstayed;
+} 

@@ -15,6 +15,8 @@ class ParkingLot {
         void parkVehicle(Vehicle vehicle); //parks a vehicle using its pointer
 
         void unparkVehicle(int ID); //unparks a vehicle using its ID
+
+        int countOverstayingVehicles(int maxParkingDuration); //counts number of vehicles that have stayed for too long
 };
 
 #endif

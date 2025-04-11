@@ -28,7 +28,7 @@ void ParkingLot::parkVehicle(Vehicle vehicle) {
 void ParkingLot::unparkVehicle(int ID) {
     for (int i = 0; i < amount; i++) {
         if (vehicles[i].getID() == ID) {
-            vehicles[i] = 0;
+            vehicles[i] = Vehicle();
             return;
         }
     }

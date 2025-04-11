@@ -29,6 +29,7 @@ void ParkingLot::unparkVehicle(int ID) {
     for (int i = 0; i < amount; i++) {
         if (vehicles[i].getID() == ID) {
             vehicles[i] = Vehicle();
+            amount--;
             return;
         }
     }
@@ -39,7 +40,7 @@ void ParkingLot::unparkVehicle(int ID) {
 int ParkingLot::countOverstayingVehicles(int maxParkingDuration) {
     int overstayed = 0;
     for (int i = 0; i < amount; i++) {
-        if (vehicles[i].getParkingDuration() > 15) {
+        if (vehicles[i].getParkingDuration() > maxParkingDuration) {
             overstayed++;
         }
     }

@@ -7,14 +7,9 @@
 using namespace std;
 
 int main() {
-    TV *tvPtr = new TV();
-    Fridge *fridgePtr = new Fridge();
+    TV tv(23,54);
+    Fridge fridge(50,100);
     House house(2);
-    cout << house.addAppliance(tvPtr) << ", " << house.addAppliance(fridgePtr) << endl;
+    cout << house.addAppliance(&tv) << ", " << house.addAppliance(&fridge) << endl;
     cout << "The total power consumption is: " << house.getTotalPowerConsumption() << endl;
-    delete tvPtr;
-    delete fridgePtr;
-    tvPtr = nullptr;
-    fridgePtr = nullptr;
-    house.~House();
 }

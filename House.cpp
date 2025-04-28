@@ -17,6 +17,7 @@ House::House(int numAppliances){
 bool House::addAppliance(Appliance* appliance){
     if (totalAppliances < numAppliances) {
         appliances[totalAppliances] = appliance;
+        totalAppliances++;
         return true;
     } else {
         return false;
@@ -25,7 +26,7 @@ bool House::addAppliance(Appliance* appliance){
 //returns total power consumption of all appliances in house
 double House::getTotalPowerConsumption(){
     double totalPowerConsumption = 0;
-    for (int i = 0; i < totalAppliances - 1; i++) {
+    for (int i = 0; i < totalAppliances; i++) {
         totalPowerConsumption += appliances[i]->getPowerConsumption();
     }
     return totalPowerConsumption;

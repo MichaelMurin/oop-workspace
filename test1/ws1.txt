@@ -1,4 +1,0 @@
-1. Inform myself of any changes that are made when I look back on it.
-2. A message which concisely states the changes made
-3. After every change in code
-4. True

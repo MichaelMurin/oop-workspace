@@ -2,10 +2,13 @@
 #define GRADE_H
 
 #include "Student.h"
+#include "Course.h"
 
 class Grade {
     private:
         int student_id;
+
+        int course_id;
 
         std::string assignment;
 
@@ -13,7 +16,7 @@ class Grade {
     public:
         Grade();
 
-        Grade(std::string assignment, int value);
+        Grade(int student_id, int course_id, std::string assignment, int value);
 
         int get_student_id();
 

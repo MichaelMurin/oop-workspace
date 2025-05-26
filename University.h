@@ -10,10 +10,16 @@ class University {
          std::string location;
 
          Gradebook* gradebook;
+
+         std::vector<Course> courses;
       public:
-         void addCourse(int id, std::string name);
+        University();
 
-         Gradebook* get_gradebook();
+        University(std::string name, std::string location);
 
-         std::vector<Course> get_courses();
+        void addCourse(int id, std::string name);
+
+        Gradebook* get_gradebook();
+
+        std::vector<Course> get_courses();
 };

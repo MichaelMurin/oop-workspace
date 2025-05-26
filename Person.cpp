@@ -3,7 +3,7 @@
 using namespace std;
 
 Person::Person(){
-    name = "Person";
+    name = "placeholder";
 }
 
 Person::Person(std::string name){

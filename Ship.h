@@ -15,7 +15,7 @@ class Ship: public GameEntity{
             this->setType(3);
         }
         void move(int dx, int dy){
-            this->setPos(dx,dy);
+            this->setPos(std::get<0>(this->getPos())+dx,std::get<1>(this->getPos())+dy);
         }
 };
 

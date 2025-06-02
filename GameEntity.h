@@ -17,13 +17,11 @@ class GameEntity {
         GameEntityType type;
     public:
         GameEntity() {
-            std::get<0>(position) = 0;
-            std::get<1>(position) = 0;
+            position = std::make_tuple(0, 0);
             type = NoneType;
         }
         GameEntity(int x, int y, char type) {
-            std::get<0>(position) = x;
-            std::get<1>(position) = y;
+            std::make_tuple(x, y);
             this->type = (GameEntityType)type;
         }
         std::tuple<int, int> getPos() {
@@ -31,6 +29,13 @@ class GameEntity {
         }
         GameEntityType getType() {
             return type;
+        }
+
+        void setPos(int x, int y) {
+            position = std::make_tuple(x, y);
+        }
+        void setType(char type) {
+            this->type = (GameEntityType)type;
         }
 };
 

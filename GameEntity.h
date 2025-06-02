@@ -37,6 +37,7 @@ class GameEntity {
         void setType(char type) {
             this->type = (GameEntityType)type;
         }
+        virtual void boom() {}
 };
 
 #endif
